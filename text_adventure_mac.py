@@ -2,10 +2,10 @@
 #import time for delayed text
 import os
 import time 
-os.system('clear')#clears console
+os.system('clear')
 
 #Welcome message
-print("Welcome adventurer! Within these walls lies treasure... and a ferocious beast.")
+print("Welcome brave adventurer! Within these walls lies treasure... and a ferocious beast.")
 time.sleep(1.5)#delays text for more immersive experience
 print("Many have perished at the hands of the beast, will you be the next?")
 time.sleep(1.5)
@@ -31,10 +31,18 @@ def north_room():
     time.sleep(1.5)
     #checks to see if player has already visited the room
     if "sword" not in player_inventory:
-        print("You see a reflection of light off of something in the corner.")
+        print("You see a reflection off of something in the corner.")
         time.sleep(1.5)
         print("You move towards it...")
         time.sleep(1.5)
+        print("""
+
+         />_________________________________
+[########[]_________________________________>
+         \>
+ 
+      
+        """)
         print("It's a sword! You pick it up and head back to the entrance chamber.")
         time.sleep(1.5)
         player_inventory.append("sword") #adds sword to inventory
@@ -51,10 +59,10 @@ def east_room():
     global north
     north = 0
     #hit points counter for dragon battle
-    dragon_hp = 7
+    dragon_hp = 5
     #checks to see if player has already visited the room
     if "key" not in player_inventory:
-        print("You enter into the room and hear a roar and see a flash of light.")
+        print("You enter into the room, hear a roar and see a flash of light.")
         time.sleep(1.5)
         print("There is a dragon in the room!")
         time.sleep(1.5)
@@ -76,6 +84,16 @@ def east_room():
                     time.sleep(1.5)
                     print("You see a small metal object under it's tail.")
                     time.sleep(1.5)
+                    print("""
+
+     8 8 8 8                     ,ooo.
+     8a8 8a8                    oP   ?b
+    d888a888zzzzzzzzzzzzzzzzzzzz8     8b
+     `""^""'                    ?o_o_oP'
+
+
+
+                    """)
                     print("It's a key! You put the key in your pocket and leave.")
                     time.sleep(1.5)
                     player_inventory.append("key") #adds key to inventory
@@ -115,6 +133,19 @@ def west_room():
         time.sleep(1.5)
         print("You look around and see a chest.")
         time.sleep(1.5)
+        print("""
+
+         __________                                      
+        /\____;;___\                                     
+       | /         /    
+       `. ())oo() .                                      
+        |\(%()*^^()^\       
+       %| |-%-------|                                    
+      % \ | %  ))   |                                    
+      %  \|%________|                                    
+      
+
+        """)
         print("You open the chest and find its full of gold coins and gems!")
         time.sleep(1.5)
         player_inventory.append("treasure") #adds treasure to inventory to trigger win game sequence
