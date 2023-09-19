@@ -8,6 +8,12 @@ east = 0
 player_inventory = []
 
 def north_room():
+    global west 
+    west = 0
+    global east
+    east = 0
+    global north 
+    north = 0
     print("You enter a room gently lit by torchlight.")
     if "sword" not in player_inventory:
         print("You see a reflection of light off of something in the corner.")
@@ -18,6 +24,10 @@ def north_room():
         print("There's nothing else for you to collect in this room.")
 
 def east_room():
+    global east
+    east = 0
+    global north
+    north = 0
     dragon_hp = 7
     if "key" not in player_inventory:
         print("You enter into the room and hear a roar and see a flash of light.")
@@ -39,11 +49,17 @@ def east_room():
                     break
         else:
             print("The dragon roasts you with his flames and eats you for lunch.")
+            print("Game over...")
+            print("One of the ancient gods takes pity on you and sends your soul back to the entrance chamber.")
             player_inventory.clear()
     else:
         print("There's nothing else for you to collect in here.")
 
 def west_room():
+    global west
+    west = 0
+    global north
+    north = 0
     print("You come to a door. You try to turn the handle but it doesn't budge.")
     print("Looks like you need a key.")
     if "key" in player_inventory:
@@ -53,7 +69,6 @@ def west_room():
         print("You look around and see a chest.")
         print("You open the chest and find its full of gold coins and gems!")
         player_inventory.append("treasure")
-        print(player_inventory)
     else:
         print("You turn back.")
 
