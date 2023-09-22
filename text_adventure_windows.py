@@ -131,7 +131,7 @@ def west_room():
     north = 0
     need_key = """You come to a door. You try to turn the handle but it doesn't budge.
     Looks like you need a key."""
-    
+    slow_print(need_key)
     #checks to see if key is in inventory
     if "key" in player_inventory:
         unlock = """You take the key out of your pocket and put it into the keyhole.
